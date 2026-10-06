@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 400px; 
+      height: 500px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 15px;
+      background-color: #f0f2f5; 
+    }
+    .header {
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      margin-bottom: 12px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h3 { margin: 0; color: #333; }
+    
+    #options-btn {
+      cursor: pointer;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 20px; 
+      background-color: #0078d4;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    #options-btn:hover { 
+      background-color: #005a9e; ;
+    }
+    
+    #chat-container {
+      flex-grow: 1;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid #e1e4e8;
+      border-radius: 16px; 
+      margin-bottom: 12px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    }
+    
+    .message { padding: 10px 14px; border-radius: 16px; max-width: 85%; word-wrap: break-word; line-height: 1.4; }
+    .user { background-color: #0078d4; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+    .bot { background-color: #f1f1f1; color: #242424; align-self: flex-start; border-bottom-left-radius: 4px; }
+    .system { background-color: #fff3cd; color: #856404; align-self: center; font-size: 0.85em; text-align: center; width: 100%; border-radius: 12px;}
+    
+    .image-preview { max-width: 100%; height: auto; margin-top: 8px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); }
+    
+    pre { background: #2d2d2d; color: #f8f8f2; padding: 10px; border-radius: 8px; overflow-x: auto; font-size: 0.9em; margin: 5px 0; }
+    code.inline-code { background: #e8e8e8; color: #d83b01; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+    p { margin: 0 0 8px 0; }
+    p:last-child { margin: 0; }
+
+    #input-area { display: flex; gap: 8px; }
+    
+    input[type="text"] {
+      flex-grow: 1;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 20px; 
+      outline: none;
+    }
+    input[type="text"]:focus { border-color: #0078d4; }
+    
+    button {
+      cursor: pointer;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 20px; 
+      background-color: #0078d4;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    button:hover { background-color: #005a9e; }
+    
+    #clear-btn { background-color: #d13438; }
+    #clear-btn:hover { background-color: #a80000; }
+    
+    #paste-btn { background-color: #d83b01; }
+    #paste-btn:hover { background-color: #a80000; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <img src="images/icon-48.png" alt="Logo" style="width: 32px; height: 32px; border-radius: 50%;">
+      <h3>Gemini Assistant</h3>
+    </div>
+    <button id="options-btn" title="Open Settings">OPTIONS</button>
+  </div>
+  <div id="chat-container"></div>
+  <div id="input-area">
+    <button id="clear-btn" title="Clear Chat History">CLEAR</button>
+    <button id="paste-btn" title="Paste Image from Clipboard">PASTE</button>
+    <input type="text" id="user-input" placeholder="Ask a question...">
+    <button id="send-btn">Send</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

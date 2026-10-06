@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gemini Assistant Options</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 30px;
+      background-color: #f0f2f5;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 { margin-top: 0; color: #333; }
+    label { font-weight: bold; display: block; margin-bottom: 8px; color: #555; }
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box; 
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background-color: #005a9e; }
+    #status { margin-top: 15px; color: #107c41; font-weight: bold; }
+    .help-text { font-size: 0.9em; color: #666; margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Settings</h2>
+    <div class="help-text">
+      To use this extension, you need a free Gemini API key from Google AI Studio. 
+      <a href="https://aistudio.google.com/app/apikey" target="_blank">Get one here</a>.
+    </div>
+    
+    <label for="api-key">Gemini API Key:</label>
+    <input type="password" id="api-key" placeholder="AIzaSy...">
+    
+    <button id="save-btn">Save Key</button>
+    <div id="status"></div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
